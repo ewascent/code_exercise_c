@@ -1,4 +1,4 @@
-#USAGE: if catch_nonint([1,2,3,"x", 5]:)
+#USAGE: if catch_nonint([1,2,3,"x", 5]: raise TypeError("Not all values are ints") )
 def assertAllInts(nums):
 
     for num in nums:
@@ -11,6 +11,7 @@ def assertAllInts(nums):
             return isGood
     return isGood
 
+#USAGE x = repeater([1,2,3]; print(str(x) + " is the first repeated int"))
 def repeater(nums):
     val = None
 
@@ -24,3 +25,30 @@ def repeater(nums):
                 val = nums[index]
                 return val
     return None
+
+def repeater_tail_recurse(nums, val = None, accum = 0):
+
+    # data validation one time only
+    if accum == 0:
+        if not assertAllInts(nums):
+            raise TypeError("Not all values are ints in:" + str(nums))
+        nums = sorted(nums) # change liklyhood of this being a worst case matching scenario
+
+    # get the current value to validate, clean it a bit
+    curr = int(str(nums[accum]).lstrip().rstrip())
+
+    # increment the accumulator, skipping the current vals index
+    accum = accum + 1
+
+    # remove from O(n2) to O(N+n)
+    for index in range (accum, len(nums)):
+        if nums[index] == curr:
+            val = nums[accum]
+            return val
+
+    # recurse if there is more thasn one element left to compare
+    # noting accumulator starts at zero
+    if len(nums) > accum :
+        return repeater_tail_recurse(nums, val, accum + 1)
+    else:
+        return val
