@@ -1,5 +1,13 @@
 # code_exercise_c
+Updated code exercise. Find the first duplicate number.
 
+## TODO
+Fix the tail recursion if possible.
+http://code.activestate.com/recipes/474088-tail-call-optimization-decorator/
+
+One test is failing. Need to fix that issue in the code
+
+## Usage
 Added a few updates to capture some ideas from our session. To see the code in action run the tests
 
 > python .\repeater_test.py
