@@ -1,7 +1,9 @@
 import unittest
 # create interface for system undwer test
 # to allow less test churn if we rename the sut
-from repeater import repeater as sut
+
+from repeater import repeater_tail_recurse as sut
+#from repeater import repeater as sut
 from repeater import assertAllInts as sut2
 
 class TestHelpers():
@@ -13,11 +15,15 @@ class TestHelpers():
 
 #encapsulate test calss data to allow better clean up between test suites
 class ValidateDuplicateNumber(unittest.TestCase):
-    #make class scope fpor reuse
+    #make class scope for reuse
     two_dup_vals = [1,2,3,4,5,6,7,1,2] #should retrun 1
     no_val = [1,2,3,4,5,6,7] #should return None
     bad_val = [1,2,"X3",4,5,6,7,1,2] #should fail
     exception_text = "Not all values are ints in:"
+    odd_num_vals = list(range(1,3))
+    even_num_vals = list(range(1,4))
+    many_vals = list(range(1,1940))
+    recurse_error = "maximum recursion depth exceeded"
 
     def test_finds_first_dup(self):
         expected = 1
@@ -49,6 +55,23 @@ class ValidateDuplicateNumber(unittest.TestCase):
         result = self.assertTrue(expected in str(actual.exception))
         print("TEST - test_catches_bad_vals: " + str(expected) + ". Result: " + TestHelpers.none_to_pass(result))
 
+    def test_handles_even_lists(self):
+        expected = None
+        data = self.even_num_vals
+        _sut = sut
+        actual = _sut(data)
+        result = self.assertEqual(expected, actual)
+        print("TEST - test_handles_even_lists: " + str(expected) + ". Result: " + TestHelpers.none_to_pass(result))
+
+    @unittest.SkipTest #TODO this is a bug
+    def test_handles_odd_lists(self):
+        expected = None
+        data = self.odd_num_vals
+        _sut = sut
+        actual = _sut(data)
+        result = self.assertEqual(expected, actual)
+        print("TEST - test_handles_odd_lists: " + str(expected) + ". Result: " + TestHelpers.none_to_pass(result))
+
     def test_assertAllInts_true(self):
         expected = True
         data = self.no_val
@@ -64,5 +87,17 @@ class ValidateDuplicateNumber(unittest.TestCase):
         actual = _sut(data)
         result = self.assertEqual(expected, actual)
         print("TEST - test_assertAllInts_false: " + str(expected) + ". Result: " + TestHelpers.none_to_pass(result))
+
+    # Python does not handle deep recursions
+    # test for RecursionError: maximum recursion depth exceeded while getting the str of an object
+    # So far no pattern to increase depth beyonf 19
+    def test_throws_on_deep_recurse(self):
+        expected = self.recurse_error
+        data = self.many_vals
+        _sut = sut
+        with self.assertRaises(Exception) as actual:
+            _sut(data)
+        result = self.assertTrue(expected in str(actual.exception))
+        print("TEST - test_throws_on_deep_recurse: " + str(expected) + ". Result: " + TestHelpers.none_to_pass(result))
 
 unittest.main(exit=False)

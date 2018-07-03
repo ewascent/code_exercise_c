@@ -1,3 +1,5 @@
+from tail_recursion import tail_recursive, recurse
+
 #USAGE: if catch_nonint([1,2,3,"x", 5]: raise TypeError("Not all values are ints") )
 def assertAllInts(nums):
 
@@ -26,6 +28,7 @@ def repeater(nums):
                 return val
     return None
 
+#@tail_recursive
 def repeater_tail_recurse(nums, val = None, accum = 0):
 
     # data validation one time only
