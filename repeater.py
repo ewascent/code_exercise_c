@@ -13,6 +13,8 @@ def assertAllInts(nums):
             return isGood
     return isGood
 
+"""
+OLD FUNCTION FOR REFERENCE
 #USAGE x = repeater([1,2,3]; print(str(x) + " is the first repeated int"))
 def repeater(nums):
     val = None
@@ -27,7 +29,10 @@ def repeater(nums):
                 val = nums[index]
                 return val
     return None
+"""
 
+#if you use this fancy decorator, you actually ruin native recursions
+#but I put a bunch of effort in researching this so feel free to try it
 #@tail_recursive
 def repeater_tail_recurse(nums, val = None, accum = 0):
 
