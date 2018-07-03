@@ -2,16 +2,17 @@ from tail_recursion import tail_recursive, recurse
 
 #USAGE: if catch_nonint([1,2,3,"x", 5]: raise TypeError("Not all values are ints") )
 def assertAllInts(nums):
+    """Data validation routine to ensure we are parsing an array of ints"""
 
     for num in nums:
         _num = str(num).lstrip().rstrip()
-        isGood = None
-        if isinstance(num, int) and isGood != False:
-            isGood = True
+        is_good = None
+        if isinstance(num, int) and is_good != False:
+            is_good = True
         else:
-            isGood = False
-            return isGood
-    return isGood
+            is_good = False
+            return is_good
+    return is_good
 
 """
 OLD FUNCTION FOR REFERENCE
@@ -35,7 +36,7 @@ def repeater(nums):
 #but I put a bunch of effort in researching this so feel free to try it
 #@tail_recursive
 def repeater_tail_recurse(nums, val = None, accum = 0):
-
+    """Recurse over the array of ints and find the first match. Sorts the list to slightly optimize matching"""
     # data validation one time only
     if accum == 0:
         if not assertAllInts(nums):
@@ -58,5 +59,4 @@ def repeater_tail_recurse(nums, val = None, accum = 0):
     # noting accumulator starts at zero
     if len(nums) > accum :
         return repeater_tail_recurse(nums, val, accum + 1)
-    else:
-        return val
+    return val

@@ -7,7 +7,10 @@ from repeater import repeater_tail_recurse as sut
 from repeater import assertAllInts as sut2
 
 class TestHelpers():
+    """helper functions for testing go here"""
+
     def none_to_pass(value):
+        """convert the None return value of a test to PASS"""
         if value == None:
             return "PASS"
         else:
@@ -16,13 +19,13 @@ class TestHelpers():
 #encapsulate test calss data to allow better clean up between test suites
 class ValidateDuplicateNumber(unittest.TestCase):
     #make class scope for reuse
-    two_dup_vals = [1,2,3,4,5,6,7,1,2] #should retrun 1
-    no_val = [1,2,3,4,5,6,7] #should return None
-    bad_val = [1,2,"X3",4,5,6,7,1,2] #should fail
+    two_dup_vals = [1, 2, 3, 4, 5, 6, 7, 1, 2] #should retrun 1
+    no_val = [1, 2, 3, 4, 5, 6, 7] #should return None
+    bad_val = [1, 2, "X3", 4, 5, 6, 7, 1, 2] #should fail
     exception_text = "Not all values are ints in:"
-    odd_num_vals = list(range(1,3))
-    even_num_vals = list(range(1,4))
-    many_vals = list(range(1,1940))
+    odd_num_vals = list(range(1, 3))
+    even_num_vals = list(range(1, 4))
+    many_vals = list(range(1, 1940))
     recurse_error = "maximum recursion depth exceeded"
 
     def test_finds_first_dup(self):
@@ -92,6 +95,7 @@ class ValidateDuplicateNumber(unittest.TestCase):
     # test for RecursionError: maximum recursion depth exceeded while getting the str of an object
     # So far no pattern to increase depth beyonf 19
     def test_throws_on_deep_recurse(self):
+        """Test to validate how deep we can recurse before throwing"""
         expected = self.recurse_error
         data = self.many_vals
         _sut = sut
