@@ -1,4 +1,5 @@
-def assertAllInts(nums):
+"""original module for finding the first matching number"""
+def assert_all_ints(nums):
     """Data validation routine to ensure we are parsing an array of ints
     USAGE: if catch_nonint([1,2,3,"x", 5]: raise TypeError("Not all values are ints") )"""
 
@@ -16,7 +17,7 @@ def repeater(nums):
     """USAGE x = repeater([1,2,3]; print(str(x) + " is the first repeated int"))"""
     val = None
 
-    if not assertAllInts(nums):
+    if not assert_all_ints(nums):
         raise TypeError("Not all values are ints in:" + str(nums))
 
 #TODO: consider using enumerate here

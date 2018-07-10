@@ -1,6 +1,6 @@
 import unittest
 from recursive_repeater import repeater_tail_recurse as sut
-from repeater import assertAllInts as sut2
+from repeater import assert_all_ints as sut2
 from repeater import repeater as sut3
 from test_helpers import print_result
 

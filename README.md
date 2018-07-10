@@ -12,9 +12,9 @@ Added a few updates to capture some ideas from our session. To see the code in a
 
 > python .\repeater_test.py
 
->> TEST - test_assertAllInts_false: False. Result: PASS
+>> TEST - test_assert_all_ints_false: False. Result: PASS
 
->> TEST - test_assertAllInts_true: True. Result: PASS
+>> TEST - test_assert_all_ints_true: True. Result: PASS
 
 >> TEST - test_catches_bad_vals: Not all values are ints in:. Result: PASS
 
