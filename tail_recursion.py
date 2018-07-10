@@ -1,9 +1,10 @@
-## helper class to assist python in deeper tail_recursion
+"""helper class to assist python in deeper tail_recursion
 ## limit to depth tends to be 1000 recursions
-## REF: https://chrispenner.ca/posts/python-tail-recursion
+## REF: https://chrispenner.ca/posts/python-tail-recursion"""
 class Recurse(Exception):
     """recursion class implementation"""
     def __init__(self, *args, **kwargs):
+        """init"""
         self.args = args
         self.kwargs = kwargs
 def recurse(*args, **kwargs):

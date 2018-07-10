@@ -1,0 +1,5 @@
+# This is implicit but I like to call it out
+--index-url https://pypi.python.org/simple/
+
+# this defers to setup.py and reduces package listing redundancy.
+-e .
