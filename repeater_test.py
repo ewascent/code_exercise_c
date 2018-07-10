@@ -18,7 +18,7 @@ class ValidateDuplicateNumber(unittest.TestCase):
     recurse_error = "maximum recursion depth exceeded"
 
     def test_recurse_repeater_finds_first_dup(self):
-        """Find the first dupe in the list with several dupes"""
+        """Find the first dupe in the list with several dupes - recurse"""
         expected = self.two_dup_vals[0]
         data = self.two_dup_vals
         _sut = sut
@@ -27,7 +27,7 @@ class ValidateDuplicateNumber(unittest.TestCase):
         print_result("test_finds_first_dup returns", expected, result)
 
     def test_repeater_finds_first_dup(self):
-        """Find the first dupe in the list with several dupes"""
+        """Find the first dupe in the list with several dupes - non-recurse"""
         expected = self.two_dup_vals[0]
         data = self.two_dup_vals
         _sut = sut3
