@@ -1,4 +1,5 @@
 """functions used to find the first matching number in an arbitrarily long list"""
+import io
 #from tail_recursion import tail_recursive, recurse
 
 def assert_all_ints(nums):

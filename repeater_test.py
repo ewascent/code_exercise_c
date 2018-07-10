@@ -1,3 +1,4 @@
+"""Unit tests"""
 import unittest
 from recursive_repeater import repeater_tail_recurse as sut
 from repeater import assert_all_ints as sut2
@@ -35,7 +36,7 @@ class ValidateDuplicateNumber(unittest.TestCase):
         print_result("test_finds_first_dup returns", expected, result)
 
     def test_handles_no_dupe(self):
-        # uses a pattern to make adding new tests easier
+        """ensure we can handle arrays with no dupes"""
         expected = None
         data = self.no_val
         _sut = sut
@@ -63,7 +64,6 @@ class ValidateDuplicateNumber(unittest.TestCase):
         result = self.assertEqual(expected, actual)
         print_result("test_handles_even_lists", expected, result)
 
-#    @unittest.SkipTest #TODO this is a bug
     def test_handles_odd_lists(self):
         """Code handles iteration over odd numbers of items in list"""
         expected = None
