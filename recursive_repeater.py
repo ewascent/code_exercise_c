@@ -1,12 +1,20 @@
 """functions used to find the first matching number in an arbitrarily long list"""
-import io
+from io import BytesIO, BufferedReader, DEFAULT_BUFFER_SIZE
 #from tail_recursion import tail_recursive, recurse
 
-def assert_all_ints(nums):
+def assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
     """Data validation routine to ensure we are parsing an array of intsself.
     USAGE: if catch_nonint([1,2,3,"x", 5]: raise TypeError("Not all values are ints") )"""
-
-    for num in nums:
+    # TODO: BufferedReader or BytesIO?
+    # _nums = BytesIO(nums)
+    # buffer = _nums.getbuffer()
+    if not reader.readable():
+        raise IOError("ERROR - argument reader is not readible on evocation.")
+    if buffer_size is None:
+        raise IOError("ERROR - you passed in an invalid buffer_size argument.")
+    _nums = reader(nums, buffer_size)
+    # TODO: how to iterate through buffer like this for loop
+    for num in _nums:
         _num = str(num).lstrip().rstrip()
         is_good = None
         if isinstance(num, int) and is_good != False:
@@ -24,7 +32,7 @@ def repeater_tail_recurse(nums, val=None, accum=0):
     Sorts the list to slightly optimize matching"""
     # data validation one time only
     if accum == 0:
-        if not assert_all_ints(nums):
+        if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
             raise TypeError("Not all values are ints in:" + str(nums))
         nums = sorted(nums) # change liklyhood of this being a worst case matching scenario
 
