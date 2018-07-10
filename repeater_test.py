@@ -8,11 +8,11 @@ from test_helpers import print_result
 class ValidateDuplicateNumber(unittest.TestCase):
     """validate functional aspects of each unit"""
     two_dup_vals = [1, 2, 3, 1, 2, 3] #should return 1
-    no_val = [1, 2, 3, 4, 5, 6, 7] #should return None
+    no_val = list(range(11, 17)) #should return None
     bad_val = [1, 2, "X3", 4, 5, 6, 7, 1, 2] #should fail
     exception_text = "Not all values are ints in:"
-    odd_num_vals = list(range(1, 3))
-    even_num_vals = list(range(1, 4))
+    odd_num_vals = list(range(11, 13))
+    even_num_vals = list(range(11, 14))
     many_vals = list(range(1, 1940))
     recurse_error = "maximum recursion depth exceeded"
 
@@ -63,7 +63,7 @@ class ValidateDuplicateNumber(unittest.TestCase):
         result = self.assertEqual(expected, actual)
         print_result("test_handles_even_lists", expected, result)
 
-    @unittest.SkipTest #TODO this is a bug
+#    @unittest.SkipTest #TODO this is a bug
     def test_handles_odd_lists(self):
         """Code handles iteration over odd numbers of items in list"""
         expected = None

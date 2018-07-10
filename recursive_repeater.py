@@ -31,7 +31,7 @@ def repeater_tail_recurse(nums, val=None, accum=0):
     curr = int(str(nums[accum]).lstrip().rstrip())
 
     # increment the accumulator, skipping the current vals index
-    accum = accum + 1
+    accum += 1
 
     # remove from O(n2) to O(N+n)
     for index in range(accum, len(nums)):
@@ -42,5 +42,5 @@ def repeater_tail_recurse(nums, val=None, accum=0):
     # recurse if there is more thasn one element left to compare
     # noting accumulator starts at zero
     if len(nums) > accum:
-        return repeater_tail_recurse(nums, val, accum + 1)
+        return repeater_tail_recurse(nums, val, accum)
     return val

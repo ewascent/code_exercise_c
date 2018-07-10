@@ -1,9 +1,11 @@
-from repeater import repeater_tail_recurse as repeater
+"""import a small or large array of repeating vals"""
+from recursive_repeater import repeater_tail_recurse as repeater
 
-def main():
-    """entry point for application"""
-    vals = [1, 2, 3, 1, 2, 3]
+Vals = [1, 2, 3, 4, 1, 2, 3]
+
+def main(vals):
+    """entry point for application. takes an array of ints"""
     print("This should be 1 -> " + str(repeater(vals)))
 
 if __name__ == "__main__":
-    main()
+    main(Vals)
