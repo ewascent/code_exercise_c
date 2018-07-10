@@ -6,8 +6,8 @@ python:
   - "3.6-dev"  # 3.6 development branch
   - "3.7-dev"  # 3.7 development branch
 before_install:
-  - dev_install.sh
+  - ./dev_install.sh
 install:
-  - build.sh
+  - ./build.sh
 script:
-  - post_build.sh
+  - ./post_build.sh
