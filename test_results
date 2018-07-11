@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="10" errors="4" failures="2" skip="0"><testcase classname="perf_test.PerfomranceTestsRepeater" name="test_recursive_throws_on_deep_recurse" time="0.044"><failure type="builtins.AssertionError" message="False is not true&#10;    'False is not true' = self._formatMessage('False is not true', &quot;%s is not true&quot; % safe_repr(False))&#10;&gt;&gt;  raise self.failureException('False is not true')&#10;    "><![CDATA[  File "c:\opt\python\python36\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "c:\opt\python\python36\lib\unittest\case.py", line 605, in run
+    testMethod()
+  File "C:\src\python\code_exercise_c-master\tests\perf_test.py", line 25, in test_recursive_throws_on_deep_recurse
+    result = self.assertTrue(expected in str(actual.exception))
+  File "c:\opt\python\python36\lib\unittest\case.py", line 682, in assertTrue
+    raise self.failureException(msg)
+False is not true
+    'False is not true' = self._formatMessage('False is not true', "%s is not true" % safe_repr(False))
+>>  raise self.failureException('False is not true')
+    ]]></failure></testcase><testcase classname="perf_test.PerfomranceTestsRepeater" name="test_repeater_does_not_throw_on_long_list" time="0.875"><system-out><![CDATA[TEST - test_throws_on_deep_recurse: None. Result: PASS
+]]></system-out></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_assert_all_ints_false" time="0.001"><system-out><![CDATA[TEST - test_assert_all_ints_false: False. Result: PASS
+]]></system-out></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_assert_all_ints_true" time="0.000"><system-out><![CDATA[TEST - test_assert_all_ints_true: True. Result: PASS
+]]></system-out></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_catches_bad_vals" time="0.008"><failure type="builtins.AssertionError" message="False is not true&#10;    'False is not true' = self._formatMessage('False is not true', &quot;%s is not true&quot; % safe_repr(False))&#10;&gt;&gt;  raise self.failureException('False is not true')&#10;    "><![CDATA[  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 67, in testPartExecutor
+    yield
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 625, in run
+    testMethod()
+  File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 55, in test_catches_bad_vals
+    result = self.assertTrue(expected in str(actual.exception))
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 702, in assertTrue
+    raise self.failureException(msg)
+False is not true
+    'False is not true' = self._formatMessage('False is not true', "%s is not true" % safe_repr(False))
+>>  raise self.failureException('False is not true')
+    ]]></failure></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_handles_even_lists" time="0.001"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 67, in testPartExecutor
+    yield
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 625, in run
+    testMethod()
+  File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 63, in test_handles_even_lists
+    actual = _sut(data)
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+    if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
+NameError: name 'reader' is not defined
+]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_handles_no_dupe" time="0.000"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 67, in testPartExecutor
+    yield
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 625, in run
+    testMethod()
+  File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 43, in test_handles_no_dupe
+    actual = _sut(data)
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+    if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
+NameError: name 'reader' is not defined
+]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_handles_odd_lists" time="0.001"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 67, in testPartExecutor
+    yield
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 625, in run
+    testMethod()
+  File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 72, in test_handles_odd_lists
+    actual = _sut(data)
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+    if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
+NameError: name 'reader' is not defined
+]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_recurse_repeater_finds_first_dup" time="0.000"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 67, in testPartExecutor
+    yield
+  File "c:\opt\python\python36\lib\site-packages\unittest2\case.py", line 625, in run
+    testMethod()
+  File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 25, in test_recurse_repeater_finds_first_dup
+    actual = _sut(data)
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+    if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
+NameError: name 'reader' is not defined
+]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_repeater_finds_first_dup" time="0.000"><system-out><![CDATA[TEST - test_finds_first_dup returns: 1. Result: PASS
+]]></system-out></testcase></testsuite>
