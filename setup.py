@@ -16,6 +16,10 @@ setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ),
+    install_requires=[
+        "setuptools==40.0.0",
+        "pandas==0.23.3",
+    ],
     entry_points={
         'mains':[
             'repeater = __main__:main'
