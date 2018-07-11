@@ -1,6 +1,13 @@
 from urllib.request import urlopen
-from xml.dom import minidom
 from xml.dom.minidom import parse, parseString
+import io
+
+def xmlReader(xmlDoc, bufferSize=-1, seekSize=0):
+    socket = io.StringIO(xmlDoc)
+    socket.seek(seekSize)
+    data = socket.read(bufferSize)
+    socket.close()
+    return data
 
 def fetchData(xmlDoc):
     httpsock = urlopen(xmlDoc)
@@ -20,5 +27,3 @@ def getText(xmlDoc):
     titles = docText.getElementsByTagName("title")
     for title in titles:
         print("<title>%s</title>" % printNodes(title.childNodes))
-
-getText(fetchData('http://slashdot.org/slashdot.rdf')) 
