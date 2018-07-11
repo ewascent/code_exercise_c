@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-report_file=$(pwd)/tests/test_results/xunit_results.html
 coverage_folder=$(pwd)/tests/test_results
-rm -rf $report_file, $coverage_folder/*
+report_file=$coverage_folder/xunit_results.html
+rm -rf $report_file, $coverage_folder
 mkdir -m 777 $coverage_folder
 pylint --errors-only --score y .
-nosetests 
+nosetests
 coverage erase
 coverage run --source=src .
 coverage report -m
