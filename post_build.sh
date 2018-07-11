@@ -4,7 +4,7 @@ coverage_folder=$(pwd)/tests/test_results
 rm -rf $report_file, $coverage_folder/*
 mkdir -m 777 $coverage_folder
 pylint --errors-only --score y .
-nosetests ./tests
+nosetests 
 coverage erase
 coverage run --source=src .
 coverage report -m

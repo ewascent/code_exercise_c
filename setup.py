@@ -11,7 +11,6 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ewascent/code_exercise_c",
-#    install_requires=['unittest2'],
     packages=find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
