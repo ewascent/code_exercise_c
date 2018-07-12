@@ -1,5 +1,5 @@
 """import a small or large array of repeating vals"""
-from src.recursive_repeater import repeater_tail_recurse as repeater
+from src.recursive_repeater import repeater_recurse as repeater
 from src.xml_parser import *
 
 Vals = [1, 2, 3, 4, 1, 2, 3]

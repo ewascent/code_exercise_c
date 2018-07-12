@@ -30,7 +30,7 @@ False is not true
     testMethod()
   File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 63, in test_handles_even_lists
     actual = _sut(data)
-  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_recurse
     if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
 NameError: name 'reader' is not defined
 ]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_handles_no_dupe" time="0.000"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
@@ -40,7 +40,7 @@ NameError: name 'reader' is not defined
     testMethod()
   File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 43, in test_handles_no_dupe
     actual = _sut(data)
-  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_recurse
     if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
 NameError: name 'reader' is not defined
 ]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_handles_odd_lists" time="0.001"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
@@ -50,7 +50,7 @@ NameError: name 'reader' is not defined
     testMethod()
   File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 72, in test_handles_odd_lists
     actual = _sut(data)
-  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_recurse
     if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
 NameError: name 'reader' is not defined
 ]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_recurse_repeater_finds_first_dup" time="0.000"><error type="builtins.NameError" message="name 'reader' is not defined"><![CDATA[Traceback (most recent call last):
@@ -60,7 +60,7 @@ NameError: name 'reader' is not defined
     testMethod()
   File "C:\src\python\code_exercise_c-master\tests\repeater_test.py", line 25, in test_recurse_repeater_finds_first_dup
     actual = _sut(data)
-  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_tail_recurse
+  File "c:\src\python\code_exercise_c-master\recursive_repeater.py", line 35, in repeater_recurse
     if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
 NameError: name 'reader' is not defined
 ]]></error></testcase><testcase classname="repeater_test.ValidateDuplicateNumber" name="test_repeater_finds_first_dup" time="0.000"><system-out><![CDATA[TEST - test_finds_first_dup returns: 1. Result: PASS

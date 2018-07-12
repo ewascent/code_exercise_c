@@ -7,6 +7,7 @@ class Recurse(Exception):
         """init"""
         self.args = args
         self.kwargs = kwargs
+
 def recurse(*args, **kwargs):
     """Throw away the used stack. Exception manages the actual tail aspect of tail recursion"""
     raise Recurse(*args, **kwargs)
