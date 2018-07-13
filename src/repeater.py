@@ -14,13 +14,14 @@ def assert_all_ints(nums):
     return is_good
 
 def repeater(nums):
-    """USAGE x = repeater([1,2,3]; print(str(x) + " is the first repeated int"))"""
+    """USAGE x = repeater([1,2,3]
+    print(str(x) + " is the first repeated int"))"""
+
     val = None
 
     if not assert_all_ints(nums):
         raise TypeError("Not all values are ints in:" + str(nums))
 
-#TODO: consider using enumerate here
     for index in range(0, len(nums)):
         for new_index in range((index + 1), len(nums)):
             if nums[new_index] == nums[index]:

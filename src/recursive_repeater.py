@@ -20,25 +20,22 @@ def assert_all_ints(nums):
 def repeater_recurse(nums, val=None, accum=0):
     """Recurse over the array of ints and find the first match.
     Sorts the list to slightly optimize matching"""
+
     # data validation one time only
     if accum == 0:
         # if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
         if not assert_all_ints(nums):
             raise TypeError("Not all values are ints in:" + str(nums))
         nums = sorted(nums) # change liklyhood of this being a worst case matching scenario
-
     # get the current value to validate, clean it a bit
     curr = int(str(nums[accum]).lstrip().rstrip())
-
     # increment the accumulator, skipping the current vals index
     accum += 1
-
     # remove from O(n2) to O(N+n)
     for index in range(accum, len(nums)):
         if nums[index] == curr:
             val = nums[accum]
             return val
-
     # recurse if there is more thasn one element left to compare
     # noting accumulator starts at zero
     if len(nums) > accum:
