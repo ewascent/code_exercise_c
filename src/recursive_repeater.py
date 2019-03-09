@@ -1,7 +1,8 @@
 """functions used to find the first matching number in an arbitrarily long list"""
+import asyncio
 from src.tail_recursion import tail_recursive, recurse
 
-def assert_all_ints(nums):
+async def assert_all_ints(nums):
     """Data validation routine to ensure we are parsing an array of intsself.
     USAGE: if catch_nonint([1,2,3,"x", 5]: raise TypeError("Not all values are ints") )"""
     for num in nums:
@@ -17,11 +18,12 @@ def assert_all_ints(nums):
 #if you use this fancy decorator, you actually ruin native recursions
 #but I put a bunch of effort in researching this so feel free to try it
 #@tail_recursive
-def repeater_recurse(nums, val=None, accum=0):
+async def repeater_recurse(nums, val=None, accum=0):
     """Recurse over the array of ints and find the first match.
     Sorts the list to slightly optimize matching"""
 
     # data validation one time only
+    # TODO: bad idea as this travewrses the whole array. better to eval each val as comparing.
     if accum == 0:
         # if not assert_all_ints(reader, nums, buffer_size = DEFAULT_BUFFER_SIZE):
         if not assert_all_ints(nums):
